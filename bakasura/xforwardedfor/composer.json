@@ -5,7 +5,7 @@
 	"homepage": "https://github.com/BakasuraRCE/xforwardedfor",
 	"version": "1.0.0",
 	"keywords": ["phpbb", "extension", "trusted ip", "ip", "x-forwarded-for", "session", "cloudflare", "security"],
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
     "authors": [
         {
             "name": "Bakasura",
