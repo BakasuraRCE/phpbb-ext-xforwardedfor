@@ -28,7 +28,7 @@
 		},
 		"version-check": {
 			"host": "raw.githubusercontent.com",
-			"directory": "/BakasuraRCE/phpbb-ext-xforwardedfor/main",
+			"directory": "/BakasuraRCE/phpbb-ext-xforwardedfor/master",
 			"filename": "version_check.json"
 		}
 	}
