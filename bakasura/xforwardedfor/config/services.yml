@@ -4,5 +4,6 @@ services:
         arguments:
             - '@request'
             - '@config_text'
+        public: false
         tags:
             - { name: event.listener }

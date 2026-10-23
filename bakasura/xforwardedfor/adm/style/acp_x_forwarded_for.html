@@ -3,19 +3,33 @@
 <h1>{{ lang('SETTINGS') }}</h1>
 
 <form id="acp_board" method="post" action="{{ U_ACTION }}">
-    <fieldset>
-        <dl>
-            <dt><label for="xff_trusted_ips">{{ lang('XFF_ACP_TRUSTED_IPS') }}</label></dt>
-            <dd><textarea name="xff_trusted_ips" id="xff_trusted_ips" rows="8" cols="50">{{ XFF_TRUSTED_IPS }}</textarea></dd>
-        </dl>
+	<fieldset>
+		<dl>
+			<dt><label for="xff_cloudflare_mode">{{ lang('XFF_ACP_CLOUDFLARE_MODE') }}</label></dt>
+			<dd>
+				<input type="checkbox" name="xff_cloudflare_mode" id="xff_cloudflare_mode" value="1"{% if XFF_CLOUDFLARE_MODE %} checked="checked"{% endif %} onchange="xffToggleTrustedIps(this.checked)" />
+				<p>{{ lang('XFF_ACP_CLOUDFLARE_MODE_EXPLAIN') }}</p>
+			</dd>
+		</dl>
 
-        <p class="submit-buttons">
-            <input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}"/>&nbsp;
-            <input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}"/>
-        </p>
+		<dl id="xff_trusted_ips_block"{% if XFF_CLOUDFLARE_MODE %} style="display:none"{% endif %}>
+			<dt><label for="xff_trusted_ips">{{ lang('XFF_ACP_TRUSTED_IPS') }}</label></dt>
+			<dd><textarea name="xff_trusted_ips" id="xff_trusted_ips" rows="8" cols="50">{{ XFF_TRUSTED_IPS|e }}</textarea></dd>
+		</dl>
 
-        {{ S_FORM_TOKEN }}
-    </fieldset>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
+		</p>
+
+		{{ S_FORM_TOKEN }}
+	</fieldset>
 </form>
+
+<script>
+function xffToggleTrustedIps(cloudflareEnabled) {
+	document.getElementById('xff_trusted_ips_block').style.display = cloudflareEnabled ? 'none' : '';
+}
+</script>
 
 {% INCLUDE 'overall_footer.html' %}

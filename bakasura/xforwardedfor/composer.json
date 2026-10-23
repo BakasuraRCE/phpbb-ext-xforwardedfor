@@ -6,22 +6,25 @@
 	"version": "1.0.1",
 	"keywords": ["phpbb", "extension", "trusted ip", "ip", "x-forwarded-for", "session", "cloudflare", "security"],
 	"license": "GPL-2.0-only",
-    "authors": [
-        {
-            "name": "Bakasura",
-            "email": "@bakasura-rce:matrix.org",
-            "homepage": "https://bakasurarce.github.io/",
-            "role": "Developer"
-        }
-    ],
+	"authors": [
+		{
+			"name": "Bakasura",
+			"homepage": "https://bakasurarce.github.io/",
+			"role": "Developer"
+		}
+	],
 	"require": {
-		"php": ">=5.4",
+		"php": ">=7.1.3",
 		"composer/installers": "~1.0"
+	},
+	"support": {
+		"issues": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/issues",
+		"source": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor"
 	},
 	"extra": {
 		"display-name": "X-Forwarded-For",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.10,<3.3.0@dev"
+			"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
 		},
 		"version-check": {
 			"host": "raw.githubusercontent.com",
