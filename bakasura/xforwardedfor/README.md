@@ -1,6 +1,6 @@
 # X-Forwarded-For — phpBB Extension
 
-**Version:** 1.1.0 | **License:** GPL-2.0-only
+**Version:** 1.1.1 | **License:** GPL-2.0-only
 
 ## Description
 

@@ -1,8 +1,8 @@
 {
 	"stable": {
 		"3.3": {
-			"current": "1.1.0",
-			"download": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/archive/refs/tags/v1.1.0.zip",
+			"current": "1.1.1",
+			"download": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/archive/refs/tags/v1.1.1.zip",
 			"announcement": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor",
 			"eol": null,
 			"security": false

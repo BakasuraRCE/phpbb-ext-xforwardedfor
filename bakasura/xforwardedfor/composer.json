@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "X-Forwarded-For Extension for phpBB 3.3",
 	"homepage": "https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"keywords": ["phpbb", "extension", "trusted ip", "ip", "x-forwarded-for", "session", "cloudflare", "security"],
 	"license": "GPL-2.0-only",
 	"authors": [

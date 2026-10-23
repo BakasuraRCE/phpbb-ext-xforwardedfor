@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-10-23
+
+### Added
+- `CHANGELOG.md` documenting the full project history.
+- Root-level `CHANGELOG.md` symlink for better repository visibility on GitHub.
+
+### Fixed
+- Version-check directory reference in `composer.json` corrected from `main` to `master`
+  (the repository's actual default branch), fixing in-phpBB update notifications.
+
+### Changed
+- Version bumped to 1.1.1 in `composer.json`, `version_check.json`, and `README.md`.
+- Version-check download URL updated to point to the `v1.1.1` release archive.
+
 ## [1.1.0] - 2026-10-23
 
 ### Added
@@ -71,6 +85,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - English language file (`language/en/info_acp_x_forwarded_for.php`).
 - ACP HTML template (`adm/style/acp_x_forwarded_for.html`).
 
+[1.1.1]: https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/BakasuraRCE/phpbb-ext-xforwardedfor/releases/tag/v1.0.0
