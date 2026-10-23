@@ -1,6 +1,6 @@
 # X-Forwarded-For — phpBB Extension
 
-**Version:** 1.0.1 | **License:** GPL-2.0-only
+**Version:** 1.1.0 | **License:** GPL-2.0-only
 
 ## Description
 
@@ -91,6 +91,19 @@ Do not enable this extension on a server that is directly reachable from the
 internet without a trusted reverse proxy in front of it. Any client could then set
 an arbitrary `X-Forwarded-For` header and forge their IP address in phpBB's session
 and moderation logs.
+
+**Empty trusted IP list is safe by default.** In generic proxy mode, if the trusted
+IP list is left empty the extension will never override the session IP — no IP
+forwarding will occur at all. This is the safe default; add proxy IPs to the list
+only when you are certain those hosts are under your control.
+
+**Cloudflare mode requires Cloudflare to be the sole network path to your server.**
+`CF-Connecting-IP` is only trustworthy because Cloudflare injects and controls it
+before the request reaches your origin. If your server is directly reachable from
+the internet (e.g. its IP address is publicly known or DNS bypasses Cloudflare), any
+client can send a forged `CF-Connecting-IP` header and the extension will accept it
+as the real IP. Only enable Cloudflare mode when all public traffic is routed through
+Cloudflare and direct access to the origin server is blocked at the network level.
 
 ## License
 

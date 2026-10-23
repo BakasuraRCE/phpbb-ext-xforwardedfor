@@ -7,8 +7,8 @@
 		<dl>
 			<dt><label for="xff_cloudflare_mode">{{ lang('XFF_ACP_CLOUDFLARE_MODE') }}</label></dt>
 			<dd>
-				<input type="checkbox" name="xff_cloudflare_mode" id="xff_cloudflare_mode" value="1"{% if XFF_CLOUDFLARE_MODE %} checked="checked"{% endif %} onchange="xffToggleTrustedIps(this.checked)" />
-				<p>{{ lang('XFF_ACP_CLOUDFLARE_MODE_EXPLAIN') }}</p>
+				<input type="checkbox" name="xff_cloudflare_mode" id="xff_cloudflare_mode" value="1"{% if XFF_CLOUDFLARE_MODE %} checked="checked"{% endif %} />
+				<br /><em>{{ lang('XFF_ACP_CLOUDFLARE_MODE_EXPLAIN') }}</em>
 			</dd>
 		</dl>
 
@@ -27,9 +27,18 @@
 </form>
 
 <script>
-function xffToggleTrustedIps(cloudflareEnabled) {
-	document.getElementById('xff_trusted_ips_block').style.display = cloudflareEnabled ? 'none' : '';
-}
+(function () {
+	function toggleTrustedIps(enabled) {
+		document.getElementById('xff_trusted_ips_block').style.display = enabled ? 'none' : '';
+	}
+
+	var cb = document.getElementById('xff_cloudflare_mode');
+	if (cb) {
+		cb.addEventListener('change', function () {
+			toggleTrustedIps(this.checked);
+		});
+	}
+}());
 </script>
 
 {% INCLUDE 'overall_footer.html' %}
